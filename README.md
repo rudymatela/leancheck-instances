@@ -61,6 +61,7 @@ Further reading / see also
 [quickcheck-instances]:                  https://hackage.haskell.org/package/quickcheck-instances
 
 [build-status]: https://travis-ci.org/rudymatela/leancheck-instances.svg?branch=master
+[build-log]:    https://travis-ci.org/rudymatela/leancheck-instances
 [leancheck-on-hackage]: https://hackage.haskell.org/package/leancheck-instances
 [stackage-lts-badge]:            http://stackage.org/package/leancheck-instances/badge/lts
 [stackage-nightly-badge]:        http://stackage.org/package/leancheck-instances/badge/nightly
