@@ -56,6 +56,7 @@ Further reading / see also
 [LeanCheck provider for Tasty]:          https://hackage.haskell.org/package/tasty-leancheck
 [LeanCheck provider for test-framework]: https://hackage.haskell.org/package/test-framework-leancheck
 [LeanCheck provider for Hspec]:          https://hackage.haskell.org/package/hspec-leancheck
+[LeanCheck]:                             https://github.com/rudymatela/leancheck
 [QuickCheck]:                            https://hackage.haskell.org/package/QuickCheck
 [quickcheck-instances]:                  https://hackage.haskell.org/package/quickcheck-instances
 
@@ -63,6 +64,6 @@ Further reading / see also
 [leancheck-on-hackage]: https://hackage.haskell.org/package/leancheck-instances
 [stackage-lts-badge]:            http://stackage.org/package/leancheck-instances/badge/lts
 [stackage-nightly-badge]:        http://stackage.org/package/leancheck-instances/badge/nightly
-[leancheck-on-stackage]:         http://stackage.org/package/leancheck-instances
-[leancheck-on-stackage-lts]:     http://stackage.org/lts/package/leancheck-instances
-[leancheck-on-stackage-nightly]: http://stackage.org/nightly/package/leancheck-instances
+[leancheck-instances-on-stackage]:         http://stackage.org/package/leancheck-instances
+[leancheck-instances-on-stackage-lts]:     http://stackage.org/lts/package/leancheck-instances
+[leancheck-instances-on-stackage-nightly]: http://stackage.org/nightly/package/leancheck-instances
