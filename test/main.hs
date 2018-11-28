@@ -2,17 +2,22 @@
 -- Distributed under the 3-Clause BSD licence (see the file LICENSE).
 import System.Exit (exitFailure)
 import Data.List (elemIndices)
+import qualified Data.Text as T
 
 import Test.LeanCheck
 import Test.LeanCheck.Instances
 
 main :: IO ()
 main =
-  case elemIndices False tests of
+  case elemIndices False (tests 1000) of
   [] -> putStrLn "Tests passed!"
   is -> putStrLn ("Failed tests:" ++ show is) >> exitFailure
 
-tests :: [Bool]
-tests =
+tests :: Int -> [Bool]
+tests n =
   [ True
+
+  , fails n $ \ts -> T.words (T.unwords ts) == ts
+  , fails n $ \t ->   T.unwords (T.words t) == t
+  , holds n $ \ts ->   T.words (T.unwords (T.words ts)) == T.words ts
   ]
