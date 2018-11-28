@@ -9,6 +9,8 @@ eg/test-text: \
   eg/test-text.hs \
   mk/toplibs
 eg/test-text.o: \
+  src/Test/LeanCheck/Instances/Text.hs \
+  src/Test/LeanCheck/Instances.hs \
   eg/test-text.hs
 mk/All.o: \
   src/Test/LeanCheck/Instances/Text.hs \
@@ -18,6 +20,11 @@ mk/Toplibs.o: \
   src/Test/LeanCheck/Instances/Text.hs \
   src/Test/LeanCheck/Instances.hs \
   mk/Toplibs.hs
+Setup.o: \
+  Setup.hs
+Setup: \
+  Setup.hs \
+  mk/toplibs
 src/Test/LeanCheck/Instances.o: \
   src/Test/LeanCheck/Instances/Text.hs \
   src/Test/LeanCheck/Instances.hs
@@ -30,8 +37,6 @@ test/main.o: \
 test/main: \
   test/main.hs \
   mk/toplibs
-test/Test.o: \
-  test/Test.hs
 test/text.o: \
   test/text.hs \
   src/Test/LeanCheck/Instances/Text.hs \
