@@ -4,7 +4,6 @@
 -- Distributed under the 3-Clause BSD licence (see the file LICENSE).
 import Test.LeanCheck
 import Test.LeanCheck.Instances
-import Test.LeanCheck.Utils.Types
 import Test.LeanCheck.Function
 import Test.LeanCheck.Function.Eq
 import Test.LeanCheck.Tiers (showTiers, finite)
@@ -12,6 +11,7 @@ import System.Environment
 import Data.List (intercalate, nub)
 import Data.Ratio ((%))
 import Data.Text (Text)
+import Numeric.Natural
 
 dropEmptyTiersTail :: [[a]] -> [[a]]
 dropEmptyTiersTail ([]:[]:[]: []:[]:[]: _) = []
@@ -81,7 +81,6 @@ main = do
     -- standard types
     "()"               -> put t n (u :: ()                   )
     "Int"              -> put t n (u :: Int                  )
-    "Nat"              -> put t n (u :: Nat                  )
     "Integer"          -> put t n (u :: Integer              )
     "Bool"             -> put t n (u :: Bool                 )
     "Char"             -> put t n (u :: Char                 )
@@ -92,5 +91,6 @@ main = do
     "[Int]"            -> put t n (u :: [Int]                )
     -- other
     "Text"             -> put t n (u :: Text                 )
+    "Natural"          -> put t n (u :: Natural              )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"

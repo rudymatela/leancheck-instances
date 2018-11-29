@@ -89,7 +89,9 @@ mk/toplibs: mk/Toplibs.o
 include mk/haskell.mk
 
 diff-test-tiers: bench/tiers
+	./bench/tiers "Natural"          | diff -rud test/diff/tiers-Natural.out     -
 	./bench/tiers "Text"             | diff -rud test/diff/tiers-Text.out        -
 
 update-diff-test-tiers: bench/tiers
+	./bench/tiers "Natural"          > test/diff/tiers-Natural.out
 	./bench/tiers "Text"             > test/diff/tiers-Text.out

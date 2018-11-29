@@ -51,6 +51,7 @@ source-repository this
 library
   exposed-modules: Test.LeanCheck.Instances
                  , Test.LeanCheck.Instances.Text
+                 , Test.LeanCheck.Instances.Natural
   hs-source-dirs: src
   build-depends: base >= 4 && < 5
                , leancheck

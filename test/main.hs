@@ -3,6 +3,7 @@
 import System.Exit (exitFailure)
 import Data.List (elemIndices)
 import qualified Data.Text as T
+import Numeric.Natural
 
 import Test.LeanCheck
 import Test.LeanCheck.Instances
@@ -20,4 +21,7 @@ tests n =
   , fails n $ \ts -> T.words (T.unwords ts) == ts
   , fails n $ \t ->   T.unwords (T.words t) == t
   , holds n $ \ts ->   T.words (T.unwords (T.words ts)) == T.words ts
+
+  , holds n $ \x y -> x + y == y + (x :: Natural)
+  , fails n $ \x y -> x + y == (x :: Natural)
   ]
