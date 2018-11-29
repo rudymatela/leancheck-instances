@@ -8,6 +8,7 @@ import Test.LeanCheck.Function
 import Test.LeanCheck.Function.Eq
 import Test.LeanCheck.Tiers (showTiers, finite)
 import System.Environment
+import qualified Data.ByteString as BS
 import Data.List (intercalate, nub)
 import Data.Ratio ((%))
 import Data.Text (Text)
@@ -92,5 +93,6 @@ main = do
     -- other
     "Text"             -> put t n (u :: Text                 )
     "Natural"          -> put t n (u :: Natural              )
+    "ByteString"       -> put t n (u :: BS.ByteString        )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"

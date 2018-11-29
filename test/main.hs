@@ -3,6 +3,8 @@
 import System.Exit (exitFailure)
 import Data.List (elemIndices)
 import qualified Data.Text as T
+import qualified Data.ByteString as BS
+import qualified Data.ByteString.Lazy as BL
 import Numeric.Natural
 
 import Test.LeanCheck
@@ -24,4 +26,10 @@ tests n =
 
   , holds n $ \x y -> x + y == y + (x :: Natural)
   , fails n $ \x y -> x + y == (x :: Natural)
+
+  , fails n $ \bs -> BS.reverse bs == bs
+  , holds n $ \bs -> BS.reverse (BS.reverse bs) == bs
+
+  , fails n $ \bs -> BL.reverse bs == bs
+  , holds n $ \bs -> BL.reverse (BL.reverse bs) == bs
   ]

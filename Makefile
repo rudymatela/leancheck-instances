@@ -91,7 +91,9 @@ include mk/haskell.mk
 diff-test-tiers: bench/tiers
 	./bench/tiers "Natural"          | diff -rud test/diff/tiers-Natural.out     -
 	./bench/tiers "Text"             | diff -rud test/diff/tiers-Text.out        -
+	./bench/tiers "ByteString" 6     | diff -rud test/diff/tiers-ByteString.out  -
 
 update-diff-test-tiers: bench/tiers
 	./bench/tiers "Natural"          > test/diff/tiers-Natural.out
 	./bench/tiers "Text"             > test/diff/tiers-Text.out
+	./bench/tiers "ByteString" 6     > test/diff/tiers-ByteString.out
