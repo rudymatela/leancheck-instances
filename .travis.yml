@@ -23,6 +23,7 @@ before_install:
 - ghc --version
 - cabal --version
 - haddock --version
+- rm -f ~/.cabal/config && cabal update
 # Download and unpack the stack executable
 # "Once Travis whitelists the stack.dev files," simply include stack in the
 # addons section. -- https://docs.haskellstack.org/en/stable/travis_ci/
@@ -38,7 +39,7 @@ script:
 - make haddock
 - make test-sdist
 - cabal test --ghc-option=-O0
-- stack --no-terminal --skip-ghc-check test --ghc-options=-O0
+- stack $STACKR --no-terminal --skip-ghc-check test --ghc-options=-O0
 
 matrix:
   allow_failures:
@@ -60,7 +61,7 @@ matrix:
     env:                   GHCVER=8.0.2        CABALVER=1.24
     addons: {apt: {packages: [ghc-8.0.2,  cabal-install-1.24], sources: hvr-ghc}}
   - ghc: '7.10'
-    env:                   GHCVER=7.10.3       CABALVER=1.22
+    env:                   GHCVER=7.10.3       CABALVER=1.22   STACKR=--resolver=lts-11.11
     addons: {apt: {packages: [ghc-7.10.3, cabal-install-1.22], sources: hvr-ghc}}
   # we only support stack with GHC >= 7.10
   - ghc: '7.8'
@@ -71,6 +72,7 @@ matrix:
     - ghc --version
     - cabal --version
     - haddock --version
+    - rm -f ~/.cabal/config && cabal update
     - cabal install leancheck
     script:
     - make && make test
