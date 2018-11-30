@@ -6,8 +6,6 @@ LeanCheck
 [![leancheck-instances on Stackage LTS][stackage-lts-badge]][leancheck-instances-on-stackage-lts]
 [![leancheck-instances on Stackage Nightly][stackage-nightly-badge]][leancheck-instances-on-stackage-nightly]
 
-__WORK IN PROGRESS -- MOST OF THE LINKS OR INSTRUCTIONS HERE DO NOT WORK__
-
 This package extends [LeanCheck] by providing [`Listable`] instances for common types provided by the
 Haskell Platform.
 
