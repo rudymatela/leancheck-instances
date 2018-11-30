@@ -32,7 +32,7 @@ before_install:
 - travis_retry curl -L https://www.stackage.org/stack/linux-x86_64 | tar xz --wildcards --strip-components=1 -C ~/.local/bin '*/stack'
 - stack config set system-ghc --global true
 - stack --version
-- cabal install leancheck text
+- cabal install leancheck bytestring nats text
 
 script:
 - make && make test
@@ -73,7 +73,7 @@ matrix:
     - cabal --version
     - haddock --version
     - rm -f ~/.cabal/config && cabal update
-    - cabal install leancheck text
+    - cabal install leancheck bytestring nats text
     script:
     - make && make test
     - make haddock HADDOCKFLAGS=
