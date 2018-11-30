@@ -1,8 +1,8 @@
 Changelog for leancheck-instances
 =================================
 
-upcoming
---------
+v0.0.1
+------
 
 * ByteString instances;
 * Natural instance;
