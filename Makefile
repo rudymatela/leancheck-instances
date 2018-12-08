@@ -12,7 +12,8 @@ BENCHS = \
 GHCIMPORTDIRS = src:test
 # -dynamic is needed only for src/Test/LeanCheck/Derive.hs and test/derive.hs
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
-HADDOCKFLAGS = --no-print-missing-docs
+HADDOCKFLAGS = --no-print-missing-docs \
+  $(shell grep -q "Arch Linux" /etc/lsb-release && echo --optghc=-dynamic)
 
 all: mk/toplibs
 
@@ -92,8 +93,12 @@ diff-test-tiers: bench/tiers
 	./bench/tiers "Natural"          | diff -rud test/diff/tiers-Natural.out     -
 	./bench/tiers "Text"             | diff -rud test/diff/tiers-Text.out        -
 	./bench/tiers "ByteString" 6     | diff -rud test/diff/tiers-ByteString.out  -
+	./bench/tiers "Set Int"          | diff -rud test/diff/tiers-SetInt.out      -
+	./bench/tiers "Set Bool"         | diff -rud test/diff/tiers-SetBool.out     -
 
 update-diff-test-tiers: bench/tiers
 	./bench/tiers "Natural"          > test/diff/tiers-Natural.out
 	./bench/tiers "Text"             > test/diff/tiers-Text.out
 	./bench/tiers "ByteString" 6     > test/diff/tiers-ByteString.out
+	./bench/tiers "Set Int"          > test/diff/tiers-SetInt.out
+	./bench/tiers "Set Bool"         > test/diff/tiers-SetBool.out

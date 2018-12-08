@@ -11,6 +11,7 @@ import System.Environment
 import qualified Data.ByteString as BS
 import Data.List (intercalate, nub)
 import Data.Ratio ((%))
+import Data.Set (Set)
 import Data.Text (Text)
 import Numeric.Natural
 
@@ -94,5 +95,8 @@ main = do
     "Text"             -> put t n (u :: Text                 )
     "Natural"          -> put t n (u :: Natural              )
     "ByteString"       -> put t n (u :: BS.ByteString        )
+    -- containers
+    "Set Int"          -> put t n (u :: Set Int              )
+    "Set Bool"         -> put t n (u :: Set Bool             )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"
