@@ -5,6 +5,12 @@ import Data.List (elemIndices)
 import qualified Data.Text as T
 import qualified Data.ByteString as BS
 import qualified Data.ByteString.Lazy as BL
+import Data.Set (Set)
+import Data.Map (Map)
+import Data.Sequence (Seq)
+import qualified Data.Set as Set
+import qualified Data.Map as Map
+import qualified Data.Sequence as Seq
 import Numeric.Natural
 
 import Test.LeanCheck
@@ -32,4 +38,13 @@ tests n =
 
   , fails n $ \bs -> BL.reverse bs == bs
   , holds n $ \bs -> BL.reverse (BL.reverse bs) == bs
+
+  , holds n $ \s -> Seq.reverse (Seq.reverse s :: Seq Int) == s
+  , fails n $ \s -> Seq.reverse (s :: Seq Int) == s
+
+  , holds n $ \a b -> a `Set.union` b == b `Set.union` (a :: Set Int)
+  , fails n $ \a b -> a `Set.union` b == (a :: Set Int)
+
+  , fails n $ \m1 m2 -> m1 `Map.union` m2 == m2 `Map.union` (m1 :: Map Int Int)
+  , holds n $ \m1 -> m1 `Map.union` m1 == (m1 :: Map Int Int)
   ]
