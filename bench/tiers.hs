@@ -13,6 +13,7 @@ import Data.List (intercalate, nub)
 import Data.Ratio ((%))
 import Data.Set (Set)
 import Data.Map (Map)
+import Data.Sequence (Seq)
 import Data.Text (Text)
 import Numeric.Natural
 
@@ -101,5 +102,7 @@ main = do
     "Set Bool"         -> put t n (u :: Set Bool             )
     "Map Int Int"      -> put t n (u :: Map Int Int          )
     "Map Bool Bool"    -> put t n (u :: Map Bool Bool        )
+    "Seq Int"          -> put t n (u :: Seq Int              )
+    "Seq Bool"         -> put t n (u :: Seq Bool             )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"
