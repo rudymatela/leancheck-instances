@@ -12,6 +12,7 @@ import qualified Data.ByteString as BS
 import Data.List (intercalate, nub)
 import Data.Ratio ((%))
 import Data.Set (Set)
+import Data.Map (Map)
 import Data.Text (Text)
 import Numeric.Natural
 
@@ -98,5 +99,7 @@ main = do
     -- containers
     "Set Int"          -> put t n (u :: Set Int              )
     "Set Bool"         -> put t n (u :: Set Bool             )
+    "Map Int Int"      -> put t n (u :: Map Int Int          )
+    "Map Bool Bool"    -> put t n (u :: Map Bool Bool        )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"
