@@ -1,8 +1,4 @@
-# stack.yaml docs:
-# https://docs.haskellstack.org/en/stable/yaml_configuration/
-
-# resolver: nightly-2015-09-21
-# resolver: ghc-7.10.2
+# stack file for leancheck-instances
 resolver: lts-12.14
 
 packages:
