@@ -1,3 +1,10 @@
+-- |
+-- Module      : Test.LeanCheck.Instances.ByteString
+-- Copyright   : (c) 2018 Rudy Matela
+-- License     : 3-Clause BSD  (see the file LICENSE)
+-- Maintainer  : Rudy Matela <rudy@matela.com.br>
+--
+-- Instances of 'Listable' for 'ByteString'.
 module Test.LeanCheck.Instances.ByteString () where
 
 import Test.LeanCheck

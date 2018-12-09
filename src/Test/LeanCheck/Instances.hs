@@ -1,5 +1,5 @@
 -- |
--- Module      : Test.LeanCheck
+-- Module      : Test.LeanCheck.Instances
 -- Copyright   : (c) 2018 Rudy Matela
 -- License     : 3-Clause BSD  (see the file LICENSE)
 -- Maintainer  : Rudy Matela <rudy@matela.com.br>
@@ -23,6 +23,9 @@
 -- * "Test.LeanCheck.Instances.Natural"
 -- * "Test.LeanCheck.Instances.ByteString"
 -- * "Test.LeanCheck.Instances.Containers"
+--
+-- Check the Haddock documentation of each module listed above for the full
+-- list of supported types.
 module Test.LeanCheck.Instances () where
 
 import Test.LeanCheck (Listable) -- for Haddock

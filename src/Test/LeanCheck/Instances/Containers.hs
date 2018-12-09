@@ -1,3 +1,10 @@
+-- |
+-- Module      : Test.LeanCheck.Instances.Containers
+-- Copyright   : (c) 2018 Rudy Matela
+-- License     : 3-Clause BSD  (see the file LICENSE)
+-- Maintainer  : Rudy Matela <rudy@matela.com.br>
+--
+-- 'Listable' containers.
 module Test.LeanCheck.Instances.Containers () where
 
 import Test.LeanCheck

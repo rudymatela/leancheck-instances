@@ -1,3 +1,10 @@
+-- |
+-- Module      : Test.LeanCheck.Instances.Text
+-- Copyright   : (c) 2018 Rudy Matela
+-- License     : 3-Clause BSD  (see the file LICENSE)
+-- Maintainer  : Rudy Matela <rudy@matela.com.br>
+--
+-- Declares 'Listable' 'Text' instances.
 module Test.LeanCheck.Instances.Text () where
 
 import Data.Text
