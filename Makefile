@@ -99,6 +99,7 @@ diff-test-tiers: bench/tiers
 	./bench/tiers "Map Bool Bool"    | diff -rud test/diff/tiers-MapBoolBool.out -
 	./bench/tiers "Seq Int"          | diff -rud test/diff/tiers-SeqInt.out      -
 	./bench/tiers "Seq Bool"         | diff -rud test/diff/tiers-SeqBool.out     -
+	./bench/tiers "IntMap Int"       | diff -rud test/diff/tiers-IntMapInt.out   -
 
 update-diff-test-tiers: bench/tiers
 	./bench/tiers "Natural"          > test/diff/tiers-Natural.out
@@ -110,3 +111,4 @@ update-diff-test-tiers: bench/tiers
 	./bench/tiers "Map Bool Bool"    > test/diff/tiers-MapBoolBool.out
 	./bench/tiers "Seq Int"          > test/diff/tiers-SeqInt.out
 	./bench/tiers "Seq Bool"         > test/diff/tiers-SeqBool.out
+	./bench/tiers "IntMap Int"       > test/diff/tiers-IntMapInt.out
