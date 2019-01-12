@@ -54,6 +54,7 @@ library
                  , Test.LeanCheck.Instances.Natural
                  , Test.LeanCheck.Instances.ByteString
                  , Test.LeanCheck.Instances.Containers
+                 , Test.LeanCheck.WithInstances
   hs-source-dirs: src
   build-depends: base >= 4 && < 5
                , leancheck >= 0.7.7
