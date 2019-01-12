@@ -52,6 +52,7 @@ source-repository this
 library
   exposed-modules: Test.LeanCheck.Instances
                  , Test.LeanCheck.Instances.Text
+                 , Test.LeanCheck.Instances.Time
                  , Test.LeanCheck.Instances.Natural
                  , Test.LeanCheck.Instances.ByteString
                  , Test.LeanCheck.Instances.Containers

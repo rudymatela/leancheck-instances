@@ -17,6 +17,7 @@ import Data.Sequence (Seq)
 import Data.IntMap (IntMap)
 import Data.IntSet (IntSet)
 import Data.Text (Text)
+import Data.Time
 import Numeric.Natural
 
 dropEmptyTiersTail :: [[a]] -> [[a]]
@@ -108,5 +109,7 @@ main = do
     "Seq Bool"         -> put t n (u :: Seq Bool             )
     "IntMap Int"       -> put t n (u :: IntMap Int           )
     "IntSet"           -> put t n (u :: IntSet               )
+    -- time
+    "UTCTime"          -> put t n (u :: UTCTime              )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"
