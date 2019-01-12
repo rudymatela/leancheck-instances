@@ -21,6 +21,9 @@ import qualified Data.Sequence as Seq
 import Data.IntMap (IntMap)
 import qualified Data.IntMap as IntMap
 
+import Data.IntSet (IntSet)
+import qualified Data.IntSet as IntSet
+
 instance (Ord a, Listable a) => Listable (Set a) where
   tiers = setCons Set.fromList
 
@@ -32,3 +35,6 @@ instance (Ord a, Listable a) => Listable (Seq a) where
 
 instance (Ord a, Listable a) => Listable (IntMap a) where
   tiers = mapCons IntMap.fromList
+
+instance Listable IntSet where
+  tiers = setCons IntSet.fromList

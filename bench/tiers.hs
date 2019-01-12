@@ -15,6 +15,7 @@ import Data.Set (Set)
 import Data.Map (Map)
 import Data.Sequence (Seq)
 import Data.IntMap (IntMap)
+import Data.IntSet (IntSet)
 import Data.Text (Text)
 import Numeric.Natural
 
@@ -106,5 +107,6 @@ main = do
     "Seq Int"          -> put t n (u :: Seq Int              )
     "Seq Bool"         -> put t n (u :: Seq Bool             )
     "IntMap Int"       -> put t n (u :: IntMap Int           )
+    "IntSet"           -> put t n (u :: IntSet               )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"
