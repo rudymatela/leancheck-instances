@@ -8,6 +8,6 @@ List of things to do for leancheck-instances.
 
 2. add support for all types supported by quickcheck-instances (& release);
 
-* add `WithInstances` module;
+* check why the Array instance produces repetitions
 
 * support more types?
