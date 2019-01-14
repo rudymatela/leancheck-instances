@@ -33,6 +33,7 @@ module Test.LeanCheck.Instances () where
 import Test.LeanCheck (Listable) -- for Haddock
 import Test.LeanCheck.Instances.Text ()
 import Test.LeanCheck.Instances.Natural ()
+import Test.LeanCheck.Instances.Array ()
 import Test.LeanCheck.Instances.ByteString ()
 import Test.LeanCheck.Instances.Containers ()
 import Test.LeanCheck.Instances.Time ()

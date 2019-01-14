@@ -10,6 +10,7 @@ import Test.LeanCheck.Tiers (showTiers, finite)
 import System.Environment
 import qualified Data.ByteString as BS
 import Data.List (intercalate, nub)
+import Data.Array
 import Data.Ratio ((%))
 import Data.Set (Set)
 import Data.Map (Map)
@@ -96,6 +97,7 @@ main = do
     "Rational"         -> put t n (u :: Rational             )
     "[()]"             -> put t n (u :: [()]                 )
     "[Int]"            -> put t n (u :: [Int]                )
+    "Array Int Int"    -> put t n (u :: Array Int Int        )
     -- other
     "Text"             -> put t n (u :: Text                 )
     "Natural"          -> put t n (u :: Natural              )

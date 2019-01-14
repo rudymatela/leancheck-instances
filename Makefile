@@ -102,6 +102,7 @@ diff-test-tiers: bench/tiers
 	./bench/tiers "IntMap Int"       | diff -rud test/diff/tiers-IntMapInt.out   -
 	./bench/tiers "IntSet"           | diff -rud test/diff/tiers-IntSet.out      -
 	./bench/tiers "UTCTime"          | diff -rud test/diff/tiers-UTCTime.out     -
+	./bench/tiers "Array Int Int"    | diff -rud test/diff/tiers-ArrayIntInt.out -
 
 update-diff-test-tiers: bench/tiers
 	./bench/tiers "Natural"          > test/diff/tiers-Natural.out
@@ -116,3 +117,4 @@ update-diff-test-tiers: bench/tiers
 	./bench/tiers "IntMap Int"       > test/diff/tiers-IntMapInt.out
 	./bench/tiers "IntSet"           > test/diff/tiers-IntSet.out
 	./bench/tiers "UTCTime"          > test/diff/tiers-UTCTime.out
+	./bench/tiers "Array Int Int"    > test/diff/tiers-ArrayIntInt.out
