@@ -12,6 +12,7 @@
 -- * <https://hackage.haskell.org/package/containers containers>
 -- * <https://hackage.haskell.org/package/nats       nats>
 -- * <https://hackage.haskell.org/package/text       text>
+-- * <https://hackage.haskell.org/package/time       time>
 --
 -- These instances are not defined in the
 -- <https://hackage.haskell.org/package/leancheck main leancheck package>
