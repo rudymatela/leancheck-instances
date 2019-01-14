@@ -10,7 +10,7 @@
 --
 -- > import Test.LeanCheck
 -- > import Test.LeanCheck.Instances
-module Test.LeanCheck.WithInstances (module Test.LeanCheck, Listable) where
+module Test.LeanCheck.WithInstances (module Test.LeanCheck) where
 
 import Test.LeanCheck
 import Test.LeanCheck.Instances
