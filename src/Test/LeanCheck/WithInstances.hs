@@ -4,7 +4,8 @@
 -- License     : 3-Clause BSD  (see the file LICENSE)
 -- Maintainer  : Rudy Matela <rudy@matela.com.br>
 --
--- "Test.LeanCheck" with additional 'Listable' instances.
+-- "Test.LeanCheck" with additional 'Listable' instances
+-- from "Test.LeanCheck.Instances".
 --
 -- Importhing this is the same as:
 --

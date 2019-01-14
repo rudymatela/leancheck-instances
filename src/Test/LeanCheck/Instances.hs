@@ -23,6 +23,7 @@
 -- * "Test.LeanCheck.Instances.Natural"
 -- * "Test.LeanCheck.Instances.ByteString"
 -- * "Test.LeanCheck.Instances.Containers"
+-- * "Test.LeanCheck.Instances.Time"
 --
 -- Check the Haddock documentation of each module listed above for the full
 -- list of supported types.
