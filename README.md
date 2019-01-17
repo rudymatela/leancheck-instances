@@ -98,8 +98,8 @@ Further reading / see also
 [build-log]:    https://travis-ci.org/rudymatela/leancheck-instances
 [hackage-version]: https://img.shields.io/hackage/v/leancheck-instances.svg
 [leancheck-instances-on-hackage]:          https://hackage.haskell.org/package/leancheck-instances
-[stackage-lts-badge]:                      http://stackage.org/package/leancheck-instances/badge/lts
-[stackage-nightly-badge]:                  http://stackage.org/package/leancheck-instances/badge/nightly
-[leancheck-instances-on-stackage]:         http://stackage.org/package/leancheck-instances
-[leancheck-instances-on-stackage-lts]:     http://stackage.org/lts/package/leancheck-instances
-[leancheck-instances-on-stackage-nightly]: http://stackage.org/nightly/package/leancheck-instances
+[stackage-lts-badge]:                      https://stackage.org/package/leancheck-instances/badge/lts
+[stackage-nightly-badge]:                  https://stackage.org/package/leancheck-instances/badge/nightly
+[leancheck-instances-on-stackage]:         https://stackage.org/package/leancheck-instances
+[leancheck-instances-on-stackage-lts]:     https://stackage.org/lts/package/leancheck-instances
+[leancheck-instances-on-stackage-nightly]: https://stackage.org/nightly/package/leancheck-instances
