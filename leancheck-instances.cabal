@@ -66,6 +66,7 @@ library
                , nats
                , text
                , time
+               , array
   default-language: Haskell2010
 
 test-suite main

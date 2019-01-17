@@ -25,7 +25,43 @@ To install the latest leancheck-instances version from Hackage, just run:
 Examples
 --------
 
-TBA
+Importing the library:
+
+	> import Test.LeanCheck
+	> import Test.LeanCheck.Instances
+
+Checking properties of `Text`:
+
+	> import qualified Data.Text as T
+	> check $ \t -> T.reverse (T.reverse t) == t
+	+++ OK, passed 200 tests.
+	> check $ \t -> T.reverse t == t
+	*** Failed! Falsifiable (after 6 tests):
+	"a "
+
+Enumerating maps:
+
+	> import Data.Map
+	> list :: [Map Bool Bool]
+	[ fromList []
+	, fromList [(False,False)]
+	, fromList [(False,True)]
+	, fromList [(True,False)]
+	, fromList [(True,True)]
+	, fromList [(False,False),(True,False)]
+	, fromList [(False,False),(True,True)]
+	, fromList [(False,True),(True,False)]
+	, fromList [(False,True),(True,True)]
+	]
+	> take 7 $ list :: [Map Int Int]
+	[ fromList []
+	, fromList [(0,0)]
+	, fromList [(0,1)]
+	, fromList [(1,0)]
+	, fromList [(0,-1)]
+	, fromList [(1,1)]
+	, fromList [(0,0),(1,0)]
+	]
 
 
 Further reading / see also
