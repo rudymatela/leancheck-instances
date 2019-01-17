@@ -1,8 +1,8 @@
 Changelog for leancheck-instances
 =================================
 
-upcoming
---------
+v0.0.2
+------
 
 * Listable Set instance;
 * Listable Map instance;
