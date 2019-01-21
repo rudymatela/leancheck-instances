@@ -1,8 +1,8 @@
 Changelog for leancheck-instances
 =================================
 
-upcoming
---------
+v0.0.3
+------
 
 * Add guide for how to add new Listable instances.
 * Minor improvements in Haddock documentation.
