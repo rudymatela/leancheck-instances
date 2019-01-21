@@ -77,8 +77,6 @@ hlint:
 
 markdown:
 	pandoc README.md -o README.html
-	pandoc doc/tutorial.md -o doc/tutorial.html
-	pandoc doc/data-invariant.md -o doc/data-invariant.html
 
 # NOTE: (very hacky!) the following target allows parallel compilation (-jN) of
 # eg and tests programs so long as they don't share dependencies _not_ stored
