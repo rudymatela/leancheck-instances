@@ -30,7 +30,7 @@ Importing the library:
 	> import Test.LeanCheck
 	> import Test.LeanCheck.Instances
 
-Checking properties of `Text`:
+Checking properties of [`Text`]:
 
 	> import qualified Data.Text as T
 	> check $ \t -> T.reverse (T.reverse t) == t
@@ -39,7 +39,7 @@ Checking properties of `Text`:
 	*** Failed! Falsifiable (after 6 tests):
 	"a "
 
-Enumerating maps:
+Enumerating [`Map`]s:
 
 	> import Data.Map
 	> list :: [Map Bool Bool]
@@ -64,6 +64,81 @@ Enumerating maps:
 	]
 
 
+Adding more instances
+---------------------
+
+Although the current objective is to include all types supported by
+[quickcheck-instances], [leancheck-instances] only has about 10% of what is
+needed.  Any help with new instances to increase that percentage will be
+appreciated.
+
+This section provides a quick guide on how to add new instances.
+
+1. __Choose the type to support__
+	Compare the instances provided on [quickcheck-instances] and
+	[leancheck-instances] and choose any that has not been added to
+	[leancheck-instances] yet.
+
+2. __Create the module file if needed__
+	If needed, create a module that will contain your instance following the
+	same structure in [quickcheck-instances]:
+
+		$ cat > src/Test/LeanCheck/Instances/Something.hs
+		-- |
+		-- Module      : Test.LeanCheck.Instances.Containers
+		-- Copyright   : (c) 2019 Authors of leancheck-instances
+		-- License     : 3-Clause BSD  (see the file LICENSE)
+		-- Maintainer  : Rudy Matela <rudy@matela.com.br>
+		--
+		-- 'Listable' something.
+		module Test.LeanCheck.Instances.Something () where
+
+		import Test.LeanCheck
+		import Something
+		^D
+
+	Remember to:
+
+	* Import your newly created module on `src/Test/LeanCheck/Instances.hs`
+
+	* Add your newly created module to the `exposed-modules` list in
+	  `leancheck-instances.cabal`.
+
+	* You may need to add a package dependency to `build-depends` on
+	  `leancheck-instances.cabal`.
+
+	* (Optionally) run `make depend` to update the `mk/depend.mk` file.
+
+3. __Create your instance__
+	Open the relevant module with your favourite text editor and add your
+	instance:
+
+		instance ... => Listable Something where
+		  ...
+
+	Check the existing modules and the [`Listable`] typeclass documentation for
+	how to create one.
+
+	Make sure your instance builds with `cabal build`.
+
+4. __Create tests__
+	Go into `tests/main.hs` and add two properties exercising your type, one
+	that [`holds`] and one that [`fails`].  Make sure the tests pass by running
+	`cabal test`.
+
+5. (Optional) __Add diff-tests__
+
+	* on `bench/tiers.hs` add an entry for your type;
+	* add two matching entries on the `diff-test-tiers` and
+	  `update-diff-test-tiers` Makefile targets.
+	* run `make update-diff-test` to generate the reference output file.
+	* run `make test` just to make sure the test is working.
+
+6. __Submit a Pull Request__
+	Then submit a [pull request on GitHub] and wait for your build to pass.
+	Alternatively, send a patch via e-mail.
+
+
 Further reading / see also
 --------------------------
 
@@ -82,10 +157,13 @@ Further reading / see also
 
 [`Listable`]:       https://hackage.haskell.org/package/leancheck/docs/Test-LeanCheck.html#t:Listable
 [`holds`]:          https://hackage.haskell.org/package/leancheck/docs/Test-LeanCheck.html#v:holds
+[`fails`]:          https://hackage.haskell.org/package/leancheck/docs/Test-LeanCheck.html#v:fails
 [`counterExample`]: https://hackage.haskell.org/package/leancheck/docs/Test-LeanCheck.html#v:counterExample
 [`check`]:          https://hackage.haskell.org/package/leancheck/docs/Test-LeanCheck.html#v:check
 [`tiers`]:          https://hackage.haskell.org/package/leancheck/docs/Test-LeanCheck.html#v:tiers
 [`list`]:           https://hackage.haskell.org/package/leancheck/docs/Test-LeanCheck.html#v:list
+[`Text`]:           https://hackage.haskell.org/package/text/docs/Data-Text.html#t:Text
+[`Map`]:            https://hackage.haskell.org/package/containers/docs/Data-Map-Lazy.html#t:Map
 
 [LeanCheck provider for Tasty]:          https://hackage.haskell.org/package/tasty-leancheck
 [LeanCheck provider for test-framework]: https://hackage.haskell.org/package/test-framework-leancheck
@@ -93,6 +171,7 @@ Further reading / see also
 [LeanCheck]:                             https://github.com/rudymatela/leancheck
 [QuickCheck]:                            https://hackage.haskell.org/package/QuickCheck
 [quickcheck-instances]:                  https://hackage.haskell.org/package/quickcheck-instances
+[leancheck-instances]:                   https://hackage.haskell.org/package/leancheck-instances
 
 [build-status]: https://travis-ci.org/rudymatela/leancheck-instances.svg?branch=master
 [build-log]:    https://travis-ci.org/rudymatela/leancheck-instances
@@ -103,3 +182,4 @@ Further reading / see also
 [leancheck-instances-on-stackage]:         https://stackage.org/package/leancheck-instances
 [leancheck-instances-on-stackage-lts]:     https://stackage.org/lts/package/leancheck-instances
 [leancheck-instances-on-stackage-nightly]: https://stackage.org/nightly/package/leancheck-instances
+[pull request on GitHub]:                  https://github.com/rudymatela/leancheck-instances/pulls
