@@ -13,6 +13,7 @@
 -- * <https://hackage.haskell.org/package/nats       nats>
 -- * <https://hackage.haskell.org/package/text       text>
 -- * <https://hackage.haskell.org/package/time       time>
+-- * <https://hackage.haskell.org/package/array      array>
 --
 -- These instances are not defined in the
 -- <https://hackage.haskell.org/package/leancheck main leancheck package>
@@ -25,6 +26,7 @@
 -- * "Test.LeanCheck.Instances.ByteString"
 -- * "Test.LeanCheck.Instances.Containers"
 -- * "Test.LeanCheck.Instances.Time"
+-- * "Test.LeanCheck.Instances.Array"
 --
 -- Check the Haddock documentation of each module listed above for the full
 -- list of supported types.
