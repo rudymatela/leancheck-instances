@@ -99,8 +99,8 @@ diff-test-tiers: bench/tiers
 	./bench/tiers "Seq Bool"         | diff -rud test/diff/tiers-SeqBool.out     -
 	./bench/tiers "IntMap Int"       | diff -rud test/diff/tiers-IntMapInt.out   -
 	./bench/tiers "IntSet"           | diff -rud test/diff/tiers-IntSet.out      -
-	./bench/tiers "UTCTime"          | diff -rud test/diff/tiers-UTCTime.out     -
-	./bench/tiers "Day"              | diff -rud test/diff/tiers-Day.out         -
+	./bench/tiers "UTCTime"        6 | diff -rud test/diff/tiers-UTCTime.out     -
+	./bench/tiers "Day"            9 | diff -rud test/diff/tiers-Day.out         -
 	./bench/tiers "DiffTime"         | diff -rud test/diff/tiers-DiffTime.out    -
 	./bench/tiers "Array Int Int"    | diff -rud test/diff/tiers-ArrayIntInt.out -
 
@@ -116,7 +116,7 @@ update-diff-test-tiers: bench/tiers
 	./bench/tiers "Seq Bool"         > test/diff/tiers-SeqBool.out
 	./bench/tiers "IntMap Int"       > test/diff/tiers-IntMapInt.out
 	./bench/tiers "IntSet"           > test/diff/tiers-IntSet.out
-	./bench/tiers "UTCTime"          > test/diff/tiers-UTCTime.out
-	./bench/tiers "Day"              > test/diff/tiers-Day.out
+	./bench/tiers "UTCTime"        6 > test/diff/tiers-UTCTime.out
+	./bench/tiers "Day"            9 > test/diff/tiers-Day.out
 	./bench/tiers "DiffTime"         > test/diff/tiers-DiffTime.out
 	./bench/tiers "Array Int Int"    > test/diff/tiers-ArrayIntInt.out

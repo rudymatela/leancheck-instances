@@ -11,21 +11,7 @@ module Test.LeanCheck.Instances.Time () where
 
 import Data.Time
 import Test.LeanCheck
-
--- This could be made more efficient.
--- Nevertheless, it is probably efficient enough for millions of tests.
-binarySearchIndexes :: (Num a, Integral a) => a -> a -> [a]
-binarySearchIndexes min max
-  | min > max   = []
-  | max == min  = [max]
-  | otherwise   =  let mid = (max - min) `div` 2 + min in
-                   mid : (binarySearchIndexes (mid + 1) max +| binarySearchIndexes min (mid - 1))
-
-binarySearchIndexesThen :: (Num a, Integral a) => a -> a -> [a]
-binarySearchIndexesThen min max  =  binarySearchIndexes min max ++ ([(min-1),(min-2)..] +| [(max+1)..])
-
-secondsInADay :: Num a => a
-secondsInADay  =  24*60*60-1
+import Test.LeanCheck.Tiers
 
 -- | This listable enumeration starts with January 2019 then switches back and
 --   forth between past and future.
@@ -44,7 +30,12 @@ secondsInADay  =  24*60*60-1
 -- >   , ...
 -- >   ]
 instance Listable Day where
-  list  =  map ModifiedJulianDay $ binarySearchIndexesThen 0 116969
+  tiers  =  mapMaybeT (\(y,(m,d)) -> fromGregorianValid y m d) (yearss >< (monthss >< dayss))
+    where
+    thisYear = 2019 -- year of release
+    yearss   = toTiers $ [thisYear,(thisYear-1)..] +| [(thisYear+1)..]
+    monthss  = toTiers $ [1..12]
+    dayss    = toTiers $ [1..31]
 
 instance Listable DiffTime where
   tiers  =  mapT (\(x,y) -> fromInteger x / fromInteger y) . reset
