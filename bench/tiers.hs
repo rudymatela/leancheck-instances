@@ -112,6 +112,8 @@ main = do
     "IntMap Int"       -> put t n (u :: IntMap Int           )
     "IntSet"           -> put t n (u :: IntSet               )
     -- time
+    "Day"              -> put t n (u :: Day                  )
+    "DiffTime"         -> put t n (u :: DiffTime             )
     "UTCTime"          -> put t n (u :: UTCTime              )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"
