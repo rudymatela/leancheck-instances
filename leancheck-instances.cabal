@@ -59,7 +59,7 @@ library
                  , Test.LeanCheck.WithInstances
   hs-source-dirs: src
   build-depends: base >= 4 && < 5
-               , leancheck >= 0.7.7
+               , leancheck >= 0.9.2
                , bytestring
                , containers
                , nats
