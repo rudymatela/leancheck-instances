@@ -32,7 +32,6 @@ extra-source-files: .gitignore
                   , mk/haddock-i
                   , mk/haskell.mk
                   , stack.yaml
-                  , stack-lts-11.yaml
                   , test/diff/*.out
                   , test/diff/eg/*.out
                   , test/sdist
