@@ -82,7 +82,7 @@ test-suite main
                      , text
   default-language:    Haskell2010
 
-test-suite text
+test-suite text-
   type:                exitcode-stdio-1.0
   main-is:             text.hs
   hs-source-dirs:      test
