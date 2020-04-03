@@ -1,8 +1,8 @@
 Changelog for leancheck-instances
 =================================
 
-upcoming
---------
+v0.0.4
+------
 
 * minor improvement on Listable UTCTime
 * improve tests
