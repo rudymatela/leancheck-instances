@@ -1,6 +1,6 @@
 # Makefile for leancheck-instances
 #
-# Copyright:   (c) 2015-2018 Rudy Matela
+# Copyright:   (c) 2015-2021 Rudy Matela
 # License:     3-Clause BSD  (see the file LICENSE)
 # Maintainer:  Rudy Matela <rudy@matela.com.br>
 TESTS = test/main      \
@@ -14,6 +14,7 @@ GHCIMPORTDIRS = src:test
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = \
   $(shell grep -q "Arch Linux" /etc/lsb-release && echo --optghc=-dynamic)
+INSTALL_DEPS = leancheck
 
 all: mk/toplibs
 
@@ -50,10 +51,12 @@ test-sdist:
 	./test/sdist
 
 test-via-cabal:
-	cabal test
+	cabal configure --enable-tests --enable-benchmarks --ghc-options="$(GHCFLAGS) -O0"
+	cabal build
+	cabal test main
 
 test-via-stack:
-	stack test
+	stack test leancheck-instances:test:main --ghc-options="$(GHCFLAGS) -O0" --system-ghc --no-install-ghc --no-terminal
 
 legacy-test: # needs ghc-8.2 .. ghc-7.8 installed as such
 	make clean  &&  make test GHC=ghc-8.2  GHCFLAGS="-Werror -dynamic"
