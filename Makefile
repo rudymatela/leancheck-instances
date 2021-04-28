@@ -12,7 +12,7 @@ BENCHS = \
 GHCIMPORTDIRS = src:test
 # -dynamic is needed only for src/Test/LeanCheck/Derive.hs and test/derive.hs
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
-HADDOCKFLAGS = --no-print-missing-docs \
+HADDOCKFLAGS = \
   $(shell grep -q "Arch Linux" /etc/lsb-release && echo --optghc=-dynamic)
 
 all: mk/toplibs
