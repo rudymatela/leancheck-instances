@@ -14,7 +14,7 @@ GHCIMPORTDIRS = src:test
 GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = \
   $(shell grep -q "Arch Linux" /etc/lsb-release && echo --optghc=-dynamic)
-INSTALL_DEPS = leancheck
+INSTALL_DEPS = leancheck bytestring containers nats text time array
 
 all: mk/toplibs
 
@@ -57,6 +57,9 @@ test-via-cabal:
 
 test-via-stack:
 	stack test leancheck-instances:test:main --ghc-options="$(GHCFLAGS) -O0" --system-ghc --no-install-ghc --no-terminal
+
+hugs-test:
+	echo 'unsupported'
 
 legacy-test: # needs ghc-8.2 .. ghc-7.8 installed as such
 	make clean  &&  make test GHC=ghc-8.2  GHCFLAGS="-Werror -dynamic"
