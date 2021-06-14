@@ -21,7 +21,6 @@ extra-doc-files: README.md
                , TODO.md
                , changelog.md
 extra-source-files: .gitignore
-                  , .travis.yml
                   , .github/workflows/build.yml
                   , Makefile
                   , bench/tiers.hs

@@ -173,8 +173,8 @@ Further reading / see also
 [quickcheck-instances]:                  https://hackage.haskell.org/package/quickcheck-instances
 [leancheck-instances]:                   https://hackage.haskell.org/package/leancheck-instances
 
-[build-status]: https://travis-ci.org/rudymatela/leancheck-instances.svg?branch=master
-[build-log]:    https://travis-ci.org/rudymatela/leancheck-instances
+[build-log]:    https://github.com/rudymatela/leancheck-instances/actions/workflows/build.yml
+[build-status]: https://github.com/rudymatela/leancheck-instances/actions/workflows/build.yml/badge.svg
 [hackage-version]: https://img.shields.io/hackage/v/leancheck-instances.svg
 [leancheck-instances-on-hackage]:          https://hackage.haskell.org/package/leancheck-instances
 [stackage-lts-badge]:                      https://stackage.org/package/leancheck-instances/badge/lts
