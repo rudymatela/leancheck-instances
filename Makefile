@@ -58,9 +58,6 @@ test-via-cabal:
 test-via-stack:
 	stack test leancheck-instances:test:main --ghc-options="$(GHCFLAGS) -O0" --system-ghc --no-install-ghc --no-terminal
 
-hugs-test:
-	echo 'unsupported'
-
 legacy-test: # needs ghc-8.2 .. ghc-7.8 installed as such
 	make clean  &&  make test GHC=ghc-8.2  GHCFLAGS="-Werror -dynamic"
 	make clean  &&  make test GHC=ghc-8.0  GHCFLAGS="-Werror -dynamic"
