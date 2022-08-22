@@ -11,7 +11,7 @@ BENCHS = \
 	bench/tiers
 GHCIMPORTDIRS = src:test
 # -dynamic is needed only for src/Test/LeanCheck/Derive.hs and test/derive.hs
-GHCFLAGS = -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
+GHCFLAGS = -v0 -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = \
   $(shell grep -q "Arch Linux" /etc/lsb-release && echo --optghc=-dynamic)
 INSTALL_DEPS = leancheck bytestring nats text --avoid-reinstalls
