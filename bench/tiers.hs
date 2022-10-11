@@ -19,6 +19,7 @@ import Data.IntMap (IntMap)
 import Data.IntSet (IntSet)
 import Data.Text (Text)
 import Data.Time
+import Data.Void (Void)
 import Numeric.Natural
 
 dropEmptyTiersTail :: [[a]] -> [[a]]
@@ -102,6 +103,7 @@ main = do
     "Text"             -> put t n (u :: Text                 )
     "Natural"          -> put t n (u :: Natural              )
     "ByteString"       -> put t n (u :: BS.ByteString        )
+    "Void"             -> put t n (u :: Void                 )
     -- containers
     "Set Int"          -> put t n (u :: Set Int              )
     "Set Bool"         -> put t n (u :: Set Bool             )

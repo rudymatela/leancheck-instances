@@ -106,6 +106,7 @@ diff-test-tiers: bench/tiers
 	./bench/tiers "Day"            9 | diff -rud test/diff/tiers-Day.out         -
 	./bench/tiers "DiffTime"         | diff -rud test/diff/tiers-DiffTime.out    -
 	./bench/tiers "Array Int Int"    | diff -rud test/diff/tiers-ArrayIntInt.out -
+	./bench/tiers "Void"             | diff -rud test/diff/tiers-Void.out -
 
 update-diff-test-tiers: bench/tiers
 	./bench/tiers "Natural"          > test/diff/tiers-Natural.out
@@ -123,3 +124,4 @@ update-diff-test-tiers: bench/tiers
 	./bench/tiers "Day"            9 > test/diff/tiers-Day.out
 	./bench/tiers "DiffTime"         > test/diff/tiers-DiffTime.out
 	./bench/tiers "Array Int Int"    > test/diff/tiers-ArrayIntInt.out
+	./bench/tiers "Void"             > test/diff/tiers-Void.out
