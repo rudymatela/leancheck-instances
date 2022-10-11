@@ -1,6 +1,13 @@
 Changelog for leancheck-instances
 =================================
 
+upcoming
+--------
+
+* add `Listable Void` instance;
+* CI using GitHub actions instead of Travis;
+
+
 v0.0.4
 ------
 
