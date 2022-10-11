@@ -1,6 +1,6 @@
 -- |
 -- Module      : Test.LeanCheck.Instances.Time
--- Copyright   : (c) 2019 Rudy Matela
+-- Copyright   : (c) 2019-2022 Rudy Matela
 -- License     : 3-Clause BSD  (see the file LICENSE)
 -- Maintainer  : Rudy Matela <rudy@matela.com.br>
 --

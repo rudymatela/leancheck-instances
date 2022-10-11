@@ -1,4 +1,4 @@
--- Copyright (c) 2015-2018 Rudy Matela.
+-- Copyright (c) 2015-2022 Rudy Matela.
 -- Distributed under the 3-Clause BSD licence (see the file LICENSE).
 import System.Exit (exitFailure)
 import Data.List (elemIndices)
