@@ -8,7 +8,6 @@ import qualified Data.ByteString.Lazy as BL
 import Data.Set (Set)
 import Data.Map (Map)
 import Data.Sequence (Seq)
-import Data.Void (Void)
 import qualified Data.Set as Set
 import qualified Data.Map as Map
 import qualified Data.Sequence as Seq
@@ -48,7 +47,4 @@ tests n =
 
   , fails n $ \m1 m2 -> m1 `Map.union` m2 == m2 `Map.union` (m1 :: Map Int Int)
   , holds n $ \m1 -> m1 `Map.union` m1 == (m1 :: Map Int Int)
-
-  , holds n $ (const False :: Void -> Bool)         -- False is never evaluated here
-  , fails n $ exists n (const True :: Void -> Bool) -- idem / ditto
   ]
