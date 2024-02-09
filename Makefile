@@ -16,7 +16,7 @@ HADDOCKFLAGS = \
   $(shell grep -q "Arch Linux" /etc/lsb-release && echo --optghc=-dynamic)
 BASE_DEPS = containers array time
 INSTALL_DEPS = leancheck bytestring nats text \
-  $(shell cabal --version | grep -q "version [0-2]\." && echo $(BASE_DEPS))
+  $(shell cabal --version | grep -q "version [0-2]\." || echo $(BASE_DEPS))
 
 all: mk/toplibs
 
