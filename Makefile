@@ -14,7 +14,9 @@ GHCIMPORTDIRS = src:test
 GHCFLAGS = -v0 -O2 $(shell grep -q "Arch Linux" /etc/lsb-release && echo -dynamic)
 HADDOCKFLAGS = \
   $(shell grep -q "Arch Linux" /etc/lsb-release && echo --optghc=-dynamic)
-INSTALL_DEPS = leancheck bytestring nats text containers array time --avoid-reinstalls
+BASE_DEPS = containers array time
+INSTALL_DEPS = leancheck bytestring nats text \
+  $(shell cabal --version | grep -q "version [0-2]\." && echo $(BASE_DEPS))
 
 all: mk/toplibs
 
