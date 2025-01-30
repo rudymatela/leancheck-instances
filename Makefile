@@ -60,6 +60,12 @@ test-via-cabal:
 test-via-stack:
 	stack test leancheck-instances:test:main --ghc-options="$(GHCFLAGS) -O0" --system-ghc --no-install-ghc --no-terminal
 
+test-with-ghc-9.12:
+	make test GHC=ghc-9.12 GHCIMPORTDIRS=src:test:../leancheck/src
+
+test-with-ghc-9.10:
+	make test GHC=ghc-9.10 GHCIMPORTDIRS=src:test:../leancheck/src
+
 legacy-test: # needs ghc-8.2 .. ghc-7.8 installed as such
 	make clean  &&  make test GHC=ghc-8.2  GHCFLAGS="-Werror -dynamic"
 	make clean  &&  make test GHC=ghc-8.0  GHCFLAGS="-Werror -dynamic"
