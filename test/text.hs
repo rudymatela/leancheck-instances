@@ -12,7 +12,7 @@ main :: IO ()
 main =
   case elemIndices False (tests 1000) of
   [] -> putStrLn "Tests passed!"
-  is -> putStrLn ("Failed tests:" ++ show is) >> exitFailure
+  is -> putStrLn ("Failed tests:" ++ Prelude.show is) >> exitFailure
 
 tests :: Int -> [Bool]
 tests n =
