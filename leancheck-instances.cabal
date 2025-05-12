@@ -73,6 +73,7 @@ library
                , text
                , time
                , array
+               , these
   default-language: Haskell2010
 
 test-suite main
