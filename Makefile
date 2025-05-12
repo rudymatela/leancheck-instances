@@ -1,6 +1,6 @@
 # Makefile for leancheck-instances
 #
-# Copyright:   (c) 2015-2022 Rudy Matela
+# Copyright:   (c) 2015-2025 Rudy Matela
 # License:     3-Clause BSD  (see the file LICENSE)
 # Maintainer:  Rudy Matela <rudy@matela.com.br>
 TESTS = test/main      \
@@ -65,20 +65,6 @@ test-with-ghc-9.12:
 
 test-with-ghc-9.10:
 	make test GHC=ghc-9.10 GHCIMPORTDIRS=src:test:../leancheck/src
-
-legacy-test: # needs ghc-8.2 .. ghc-7.8 installed as such
-	make clean  &&  make test GHC=ghc-8.2  GHCFLAGS="-Werror -dynamic"
-	make clean  &&  make test GHC=ghc-8.0  GHCFLAGS="-Werror -dynamic"
-	make clean  &&  make test GHC=ghc-7.10 GHCFLAGS="-Werror -dynamic"
-	make clean  &&  make test GHC=ghc-7.8  GHCFLAGS="-Werror -dynamic"
-	make clean  &&  make test
-
-legacy-test-via-cabal: # needs similarly named cabal wrappers
-	cabal clean  &&  cabal-ghc-8.2  configure  &&  cabal-ghc-8.2  test
-	cabal clean  &&  cabal-ghc-8.0  configure  &&  cabal-ghc-8.0  test
-	cabal clean  &&  cabal-ghc-7.10 configure  &&  cabal-ghc-7.10 test
-	cabal clean  &&  cabal-ghc-7.8  configure  &&  cabal-ghc-7.8  test
-	cabal clean  &&  cabal test
 
 hlint:
 	hlint \
