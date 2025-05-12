@@ -83,19 +83,19 @@ This section provides a quick guide on how to add new instances.
 	If needed, create a module that will contain your instance following the
 	same structure in [quickcheck-instances]:
 
-		$ cat > src/Test/LeanCheck/Instances/Something.hs
-		-- |
-		-- Module      : Test.LeanCheck.Instances.Containers
-		-- Copyright   : (c) 2019 Authors of leancheck-instances
-		-- License     : 3-Clause BSD  (see the file LICENSE)
-		-- Maintainer  : Rudy Matela <rudy@matela.com.br>
-		--
-		-- 'Listable' something.
-		module Test.LeanCheck.Instances.Something () where
+	$ cat > src/Test/LeanCheck/Instances/Something.hs
+	-- |
+	-- Module      : Test.LeanCheck.Instances.Containers
+	-- Copyright   : (c) 2019 Authors of leancheck-instances
+	-- License     : 3-Clause BSD  (see the file LICENSE)
+	-- Maintainer  : Rudy Matela <rudy@matela.com.br>
+	--
+	-- 'Listable' something.
+	module Test.LeanCheck.Instances.Something () where
 
-		import Test.LeanCheck
-		import Something
-		^D
+	import Test.LeanCheck
+	import Something
+	^D
 
 	Remember to:
 
