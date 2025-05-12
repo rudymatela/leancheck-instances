@@ -12,6 +12,7 @@ import qualified Data.Set as Set
 import qualified Data.Map as Map
 import qualified Data.Sequence as Seq
 import Numeric.Natural
+import Data.These
 
 import Test.LeanCheck
 import Test.LeanCheck.Instances
@@ -47,4 +48,7 @@ tests n =
 
   , fails n $ \m1 m2 -> m1 `Map.union` m2 == m2 `Map.union` (m1 :: Map Int Int)
   , holds n $ \m1 -> m1 `Map.union` m1 == (m1 :: Map Int Int)
+
+  , fails n $ \t -> let p  =  uncurry (*) (fromThese 2 3 t) :: Int
+                    in  p `mod` 2 == 0 || p `mod` 3 == 0
   ]

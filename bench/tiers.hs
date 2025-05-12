@@ -20,6 +20,7 @@ import Data.IntSet (IntSet)
 import Data.Text (Text)
 import Data.Time
 import Numeric.Natural
+import Data.These
 
 dropEmptyTiersTail :: [[a]] -> [[a]]
 dropEmptyTiersTail ([]:[]:[]: []:[]:[]: _) = []
@@ -115,5 +116,7 @@ main = do
     "Day"              -> put t n (u :: Day                  )
     "DiffTime"         -> put t n (u :: DiffTime             )
     "UTCTime"          -> put t n (u :: UTCTime              )
+    -- other
+    "These Int Int"    -> put t n (u :: These Int Int        )
     -- unhandled
     _                  -> putStrLn $ "unknown/unhandled type `" ++ t ++ "'"
