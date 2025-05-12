@@ -2,8 +2,8 @@ Changelog for leancheck-instances
 =================================
 
 
-upcoming
---------
+v0.0.8
+------
 
 * fix build of tests on GHC 9.10
 
