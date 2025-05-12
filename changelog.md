@@ -1,6 +1,13 @@
 Changelog for leancheck-instances
 =================================
 
+
+upcoming
+--------
+
+* fix tests on GHC 9.10
+
+
 v0.0.5
 ------
 
@@ -11,7 +18,7 @@ v0.0.5
 v0.0.4
 ------
 
-* minor improvement on Listable UTCTime
+* minor improvement on `Listable UTCTime`
 * improve tests
 
 
