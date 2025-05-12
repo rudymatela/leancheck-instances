@@ -1,6 +1,6 @@
 -- Cabal file for leancheck-instances
 name:                leancheck-instances
-version:             0.0.8
+version:             0.0.9
 synopsis:            Common LeanCheck instances
 description:
   Listable instances for types provided by the Haskell Platform.
@@ -52,7 +52,7 @@ source-repository head
 source-repository this
   type:            git
   location:        https://github.com/rudymatela/leancheck-instances
-  tag:             v0.0.8
+  tag:             v0.0.9
 
 library
   exposed-modules: Test.LeanCheck.Instances
